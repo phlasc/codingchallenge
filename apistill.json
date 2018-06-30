@@ -1,0 +1,114 @@
+{
+  "sections":[
+    {
+      "type":"hero",
+      "logo":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/logo.png",
+      "headline":"Columbia's digital investor",
+      "subHeadLine":"We love building community and we know you do too",
+      "nav":[
+        {
+          "content":"home",
+          "url":"\/"
+        },
+        {
+          "content":"about",
+          "url":"\/about"
+        },
+        {
+          "content":"blog",
+          "url":"\/blog"
+        },
+        {
+          "content":"contact",
+          "url":"\/contact"
+        }
+      ]
+    },
+    {
+      "type":"stats",
+      "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/computer.svg",
+      "content":"150 Businesses Served"
+    },
+    {
+      "type":"contentBlock",
+      "backgroundColor":"orange",
+      "headline":"South Carolina's Digital Agency",
+      "content":"Platea etiam volutpat venenatis suspendisse ridiculus mattis facilisis suscipit, ultricies ultrices ad mi litora lectus ipsum diam justo, netus ut at adipiscing semper sit maximus. Consectetur ut placerat ante pulvinar purus dapibus vivamus curabitur, suscipit netus phasellus diam elit pharetra scelerisque, eros mus posuere tellus dis quisque malesuada."
+    },
+    {
+      "type":"cards",
+      "items":[
+        [
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/bright-bulb-design-788855.jpg",
+            "headline":"Orci erat mollis",
+            "content":"Nulla at integer nunc scelerisque odio suspendisse taciti, mi commodo facilisis nec sem phasellus vestibulum libero, tellus proin sociosqu tristique inceptos tincidunt.",
+            "cta":{
+              "content":"Orci erat mollis",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/orci-erat-mollis"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/ad-adversting-advertisment-6253.jpg",
+            "headline":"Quam vitae mus ante magnis potenti",
+            "content":"Per magna facilisis phasellus potenti, curae aptent volutpat semper nostra, varius nisi penatibus.",
+            "cta":{
+              "content":"Quam vitae mus ante magnis potenti",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/quam-vitae-mus-ante-magnis-potenti"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/black-and-white-blueprint-blur-716661.jpg",
+            "headline":"Class lacinia torquent augue fusce nascetur",
+            "content":"Natoque curabitur libero sociosqu pulvinar porta eros sem lacus proin dignissim, quis dapibus mattis congue dui convallis odio sagittis.",
+            "cta":{
+              "content":"Class lacinia torquent augue fusce nascetur",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/class-lacinia-torquent-augue-fusce-nascetur"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/architecture-beautiful-church-52062.jpg",
+            "headline":"A vel habitasse metus quisque",
+            "content":"Fringilla sodales primis id nam lacinia ut erat sapien pretium, finibus sociosqu phasellus aliquam quam orci aptent elementum, suspendisse arcu nascetur nisi senectus ad praesent mollis.",
+            "cta":{
+              "content":"A vel habitasse metus quisque",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/a-vel-habitasse-metus-quisque"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/blank-brainstorming-business-6357.jpg",
+            "headline":"Bibendum elit mollis phasellus felis aenean",
+            "content":"Nostra ornare justo purus lobortis sit maecenas egestas habitant, vivamus rutrum fusce commodo molestie congue taciti vehicula dis, urna quis luctus primis porta netus pretium.",
+            "cta":{
+              "content":"Bibendum elit mollis phasellus felis aenean",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/bibendum-elit-mollis-phasellus-felis-aenean"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/apple-device-blur-blurry-273222.jpg",
+            "headline":"Sem tempor semper",
+            "content":"Euismod finibus hac et nascetur penatibus torquent placerat rhoncus phasellus curabitur ultricies imperdiet mi, dictumst parturient nisi dolor ipsum pellentesque molestie sodales porttitor non hendrerit.",
+            "cta":{
+              "content":"Sem tempor semper",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/sem-tempor-semper"
+            }
+          },
+          {
+            "img":"https:\/\/test.dubosewebgroup.com\/\/assets\/test1\/abstract-arrangement-art-457713.jpg",
+            "headline":"Gravida dignissim lorem cubilia pretium imperdiet",
+            "content":"Feugiat vehicula imperdiet lobortis odio porta condimentum bibendum maximus velit varius vulputate montes, litora massa nulla posuere tristique aliquet volutpat mi lacinia class.",
+            "cta":{
+              "content":"Gravida dignissim lorem cubilia pretium imperdiet",
+              "url":"https:\/\/test.dubosewebgroup.com\/\/articles\/gravida-dignissim-lorem-cubilia-pretium-imperdiet"
+            }
+          }
+        ]
+      ]
+    },
+    {
+      "type":"info",
+      "backgroundColor":"gray",
+      "content":"copyright 2018 DuBose Web"
+    }
+  ]
+}
