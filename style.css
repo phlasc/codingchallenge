@@ -2,6 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin:0 auto;
     max-width:1760px;
+    min-width:500px;
 
 }
 section, section#stats {
@@ -32,7 +33,7 @@ section#cards {
 }
 
 #hero > #companyLogo > img{
-    padding:20px;
+    padding:30px;
 }
 
 #hero > #companyLinks {
@@ -106,8 +107,8 @@ section#cards {
     #hero > #companySlogan > h1 , #hero > #companySlogan > h3 {
         font-size:1.5em;
     }
-    #hero > #companyLinks {
-        min-width:100%;
+    #hero > #companyLinks > ul > li {
+        float:left;
     }
     #hero > #companyLogo {
         min-width:100%;
@@ -129,7 +130,7 @@ section#cards {
 }
 .statsItem {
     width: auto;
-    margin-left:10%;
+    margin-left:30px;
     height:fit-content;
     font-weight: bold;
     text-align: center;
@@ -155,7 +156,7 @@ section#cards {
 }
 #contentBlock > div > p {
     color:white;
-    padding:5%;
+    padding:30px;
     font-size:24px;
 }
 
@@ -175,6 +176,8 @@ section#cards {
     width: 415px;
     margin-top:40px;
     height:fit-content;
+    min-height:600px;
+    max-height:600px;
     font-weight: bold;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
