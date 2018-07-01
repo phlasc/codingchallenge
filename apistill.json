@@ -35,6 +35,7 @@
       "headline":"South Carolina's Digital Agency",
       "content":"Platea etiam volutpat venenatis suspendisse ridiculus mattis facilisis suscipit, ultricies ultrices ad mi litora lectus ipsum diam justo, netus ut at adipiscing semper sit maximus. Consectetur ut placerat ante pulvinar purus dapibus vivamus curabitur, suscipit netus phasellus diam elit pharetra scelerisque, eros mus posuere tellus dis quisque malesuada."
     },
+
     {
       "type":"cards",
       "items":[
@@ -104,11 +105,6 @@
           }
         ]
       ]
-    },
-    {
-      "type":"info",
-      "backgroundColor":"gray",
-      "content":"copyright 2018 DuBose Web"
     }
   ]
 }

@@ -90,19 +90,8 @@ section#cards {
 }
 #hero > #companySlogan > button {
     margin-left:30px;
-    color:white;
-    background-color:#cb652f;
-    border:none;
-    font-size:24px;
-    font-weight:600;
-    padding-left:30px;
-    padding-right:30px;
-    padding-top:15px;
-    padding-bottom:15px;
 }
-#hero > #companySlogan > button:hover {
-    background-color: #ff7235;
-}
+
 @media only screen and (max-width: 600px) {
     #hero > #companySlogan > h1 , #hero > #companySlogan > h3 {
         font-size:1.5em;
@@ -204,7 +193,7 @@ section#cards {
     text-align:left;
 }
 
-#cards > .cardsItem > button {
+button {
     color:white;
     margin-bottom:20px;
     background-color:#cb652f;
@@ -215,11 +204,16 @@ section#cards {
     padding-top:15px;
     padding-bottom:15px;
 }
-#cards > .cardsItem > button:hover {
+button:hover {
     background-color: #ff7235;
 }
+button > span{
+    font-size:24px;
+    /* How do I do that arrow styling thing I can't figure it out and I've googled :D */
+}
 .cardsItem > img{
-    width:100%;
+    max-height:275px;
+    max-width:100%;
     font-weight: bold;
     text-align: center;
 }

@@ -1,16 +1,30 @@
-function getData(cbSuccess, cbFail) {
+function getData(success, fail) {
+    // start ajax call
     $.ajax({
+        // use apistill.json in URL to look through and develop site without random errors
         url: 'https://test.dubosewebgroup.com/test/1',
         dataType: 'json',
         type: 'get',
         cache: false,
-        success: cbSuccess,
-        error: cbFail,
+        success: success,
+        error: fail,
     });
 
 }
 
+function displayError(error) {
+    // handle errors and display error css
+    $(".error").css("display", "block");
+    $("body").css("overflow-y", "hidden");
+    if (typeof error !== 'undefined') {
+        console.log(error);
+    }
+}
+
 function renderPage(data, elementToRender) {
+    // gets data from handledata switches and appends data to the variable html
+    // then appends it into the body of the html page
+
     let html = '';
     switch (elementToRender) {
         case 'hero':
@@ -42,77 +56,51 @@ function renderPage(data, elementToRender) {
             }
             break;
         default:
-            return undefined;
+            displayError('Undefined Type called "' + elementToRender + '" while rendering HTML Elements');
+            break;
+
     }
-    $( "body" ).append(html);
+    // append this to the body
+    $("body").append(html);
+    // logging to console to make sure values are correct.
     console.log(html);
 }
 
+
 function renderHero(data) {
-    return `
- 
- <div id="hero">
-
-        <div id="companyLogo">
-            <img src="${data.logo}">
-        </div>
-        <nav id="companyLinks">
-            <ul>
-${data.nav.map(nav => `<li><a href="${nav.url}">${nav.content}</a></li>`).join("\n")}
-            </ul>
-        </nav>
-    <div id="companySlogan">
-        <h1>${data.headline}</h1>
-        <h3>${data.subHeadLine}</h3>
-        <button>Let's Get Started >></button>
-    </div>
-`;
+    // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
+    // language=HTML
+    return `\n <div id="hero">\n\n        <div id="companyLogo">\n            <img src="${data.logo}">\n        </div>\n        <nav id="companyLinks">\n            <ul>\n${data.nav.map(nav => `<li><a href="${nav.url}">${nav.content}</a></li>`).join("\n")}\n            </ul>\n        </nav>\n    <div id="companySlogan">\n        <h1>${data.headline}</h1>\n        <h3>${data.subHeadLine}</h3>\n        <button>Let's Get Started <span>>></span></button>\n    </div>\n`;
 }
+
 function renderStats(data) {
-    return `
-<section id="stats">
-    <div class="statsItem">
-        <img src="${data.img}" width="250px" height="250px"
-             style="flex-grow:2;" class="imgfiller">
-    </div>
-    <div class="statsItem" style="flex-grow:1;"><h1>${data.content}</h1></div>
-</section>
-`;
+    // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
+    // language=HTML
+    return `\n<section id="stats">\n    <div class="statsItem">\n        <img src="${data.img}" width="250px" height="250px"\n             style="flex-grow:2;" class="imgfiller">\n    </div>\n    <div class="statsItem" style="flex-grow:1;"><h1>${data.content}</h1></div>\n</section>\n`;
 }
+
 function renderContentBlock(data) {
-    return `
-<section id="contentBlock" style="background-color:${data.backgroundColor}">
-    <div>
-        <h1>${data.headline}</h1>
-        <p>${data.content}</p>
-    </div>
-</section>
-`;
+    // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
+    // language=HTML
+    return `\n<section id="contentBlock" style="background-color:${data.backgroundColor}">\n    <div>\n        <h1>${data.headline}</h1>\n        <p>${data.content}</p>\n    </div>\n</section>\n`;
 }
+
 function renderCards(data) {
-    return `
-<section id="cards">
-${data.items[0].map(items => `<div class="cardsItem"><img src="${items.img}"><div class="cardsContainer"><h4>${items.headline}</h4><p>${items.content}</p></div><button>Read>></button></div>`).join("\n")}
-</section>
-`;
+    // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
+    // language=HTML
+    return `\n<section id="cards">\n${data.items[0].map(items => `\n    <div class="cardsItem">\n        <img src="${items.img}">\n            <div class="cardsContainer">\n                <h4>${items.headline}</h4>\n                <p>${items.content}</p>\n    </div>\n    <button>Read<span>>></span></button>\n</div>`).join("\n")}\n</section>\n`;
 }
-
-
-
-
 
 function renderInfo(data) {
-    return `
-<footer id="info" style="background-color:${data.backgroundColor};">
-    <span>${data.content}</span>
-</footer>
-
-`;
+    // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
+    // language=HTML
+    return `\n<footer id="info" style="background-color:${data.backgroundColor};">\n    <span>${data.content}</span>\n</footer>\n\n`;
 }
 
 
 function handleSuccess(data) {
-    let reorderedSections = [];
+
+    // create empty arrays to receive data
     let orderedString = [];
     let typeHero = [];
     let typeStats = [];
@@ -121,19 +109,20 @@ function handleSuccess(data) {
     let typeInfo = [];
     if (typeof data !== "undefined" &&
         typeof data['sections'] !== "undefined") {
-        // splice out hero
+        //make sure data isn't empty
         let sections = data['sections'];
+        //assign data to sections for easier reading
         for (let i = 0; i < sections.length; i++) {
             orderedString.push(sections[i].type);
-            console.log(i);
-
+            //looping through sections and pushing each value to orderedString to use for order and selection
         }
 
-
         for (let i = 0; i < orderedString.length; ++i) {
-            console.log(orderedString[i] + ' helloweorldsklfj');
-
+            // this going to loop through the orderedString to get each object
             switch (orderedString[i]) {
+                // each case is looking to see if it's matching and
+                // depending on the match pushing the data associated with it to its obj
+                // to be used in interpolation
                 case 'hero':
                     typeHero = sections.find(function (s) {
                         return s.type === 'hero';
@@ -169,85 +158,34 @@ function handleSuccess(data) {
                     console.log(typeInfo);
                     renderPage(typeInfo, 'info');
                     break;
+                default:
+                    // catch undefined types if the api updates
+                    displayError('Undefined Type called "' + orderedString[i] + '" while generating objects.');
+                    break;
             }
 
         }
 
 
-        console.log(orderedString);
-        // heroSection = sections.find(function( s ) {
-        //
-        //
-        //            if(s.type === 'hero'){
-        //                return s.type ==='hero';
-        //            }
-        //
-        //
-        //     });
-
-
-        // heroSection = sections.find(function( s ) {
-        //
-        //     switch (s.type) {
-        //         case s.type === 'hero':
-        //             return s.type === 'hero';
-        //         case s.type === 'stats':
-        //             return s.type === 'stats';
-        //
-        //         default:
-        //             return null;
-        //     }
-        // });
-        sections = sections.filter(function (s) {
-            return s.type !== "hero";
-        });
-        reorderedSections = sections;
-        console.log("my cut data");
-        console.log(reorderedSections);
-
     }
 
 }
 
-
+// handle errors and start on success
 getData(handleSuccess, function (error) {
-    console.error(error);
-    $(".error").css("display", "block");
-    $("body").css("overflow-y", "hidden");
+    displayError(error);
+
 
 });
 
 
+// TODO
 // list order as string let order = [0,2,1,3,4] then cycle through to generate page.
-
 // function to write to the document taking a list string of types to order the out function
 // get json
 // convert each to it's own object
 // be able to sort through output by name
 // interpret the order we want them to come through
-// spit out html by order on successful api call$(document).ready(function () {
-//
+// spit out html by order on successful api call
 
 
-// switch(heroSection) {
-//     case s.type === 'hero':
-//         return s.type === 'hero';
-//     case s.type === 'stats':
-//         return s.type === 'stats';
-//
-//     default:
-//         return null;
-// }
-
-//     $.ajax({
-//         url: 'apistill.json',
-//         dataType: 'json',
-//         type: 'get',
-//         cache: false,
-//         success: function (data) {
-//             for (let i = 0; i < data.length; ++i) {
-//                 $('#cand').append('<div class="name">data[i].name</div>');
-//             }
-//         }
-//     });
-// });
