@@ -105,6 +105,11 @@
           }
         ]
       ]
+    },
+    {
+      "type":"info",
+      "backgroundColor":"gray",
+      "content":"copyright 2018 DuBose Web"
     }
   ]
 }
