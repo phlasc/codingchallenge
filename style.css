@@ -218,13 +218,15 @@ button {
     border:none;
     font-size:24px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 20px 40px;
 }
 button:hover {
     background-color: #ff7235;
 }
 button > span{
     font-size:24px;
+    transform: scale(.5,1);
+    display: inline-block;
     /* How do I do that arrow styling thing I can't figure it out and I've googled :D */
 }
 .cardsItem > ul > li > .cardImageContainer{
