@@ -64,6 +64,7 @@ function renderPage(data, elementToRender) {
     $("body").append(html);
     // logging to console to make sure values are correct.
     console.log(html);
+
 }
 
 
@@ -88,7 +89,7 @@ function renderContentBlock(data) {
 function renderCards(data) {
     // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
     // language=HTML
-    return `\n<section id="cards">\n${data.items[0].map(items => `\n    <div class="cardsItem">\n        <img src="${items.img}">\n            <div class="cardsContainer">\n                <h4>${items.headline}</h4>\n                <p>${items.content}</p>\n    </div>\n    <button>Read<span>>></span></button>\n</div>`).join("\n")}\n</section>\n`;
+    return `\n<section id="cards">\n${data.items[0].map(items => `\n    <div class="cardsItem">\n        <ul><li><div class="cardImageContainer"><img src="${items.img}"></div>\n            <div class="cardsContainer">\n                <h4>${items.headline}</h4>\n                <p>${items.content}</p>\n    </div>\n    <button class="buttonPosition">Read<span> >></span></button>\n</div></li></ul>`).join("\n")}\n</section>\n`;
 }
 
 function renderInfo(data) {
@@ -166,7 +167,6 @@ function handleSuccess(data) {
 
         }
 
-
     }
 
 }
@@ -177,7 +177,6 @@ getData(handleSuccess, function (error) {
 
 
 });
-
 
 // TODO
 // list order as string let order = [0,2,1,3,4] then cycle through to generate page.

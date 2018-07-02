@@ -9,10 +9,7 @@ section, section#stats {
     padding-top:140px;
     padding-bottom:140px;
 }
-section#cards {
-    padding-top: 70px !important;
-    padding-bottom: 70px !important;
-}
+
 #hero{
     background-color: #2d5764;
     width:100%;
@@ -82,6 +79,7 @@ section#cards {
 }
 #hero > #companySlogan >  h3 {
     font-size:32px;
+    font-weight: normal;
 
 }
 #hero > #companySlogan > h1, h3 {
@@ -126,10 +124,15 @@ section#cards {
 }
 
 .statsItem > h1 {
-    padding-top:70px;
-    font-size:50px;
+    padding-top:75px;
+    font-size:75px;
     color:#505050;
 }
+.statsItem > img {
+    height:375px;
+    width:375px;
+}
+
 #contentBlock {
     background-color:#cb652f;
 }
@@ -160,49 +163,62 @@ section#cards {
     display: flex;
     -webkit-flex-flow: row wrap;
     justify-content: space-around;
+    padding: 30px 80px 50px;
 }
 .cardsItem {
     width: 415px;
+    background-color:white;
+    max-width: 415px;
     margin-top:40px;
-    height:fit-content;
-    min-height:600px;
-    max-height:600px;
+    margin-bottom:30px;
     font-weight: bold;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
 }
+
 .cardsItem:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-#cards > .cardsItem > .cardsContainer > h4{
-    margin-left:5%;
+.cardsItem > ul {
+    display: flex;
+    list-style-type: none;
+    padding:0;
+    height:100%;
+    margin:0;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+ul > li {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width:415px;
+}
+#cards > .cardsItem > ul > li > .cardsContainer > h4{
+    margin: 24px 24px 24px;
     font-size:24px;
-    margin-bottom:12px;
     font-weight: bold;
     color:#505050;
     text-align:left;
 }
-#cards > .cardsItem > .cardsContainer > p{
-    margin-left:5%;
+#cards > .cardsItem > ul > li > .cardsContainer > p{
+    margin:24px;
     font-weight: normal;
     font-size:16px;
     line-height:32px;
     color:#505050;
     text-align:left;
 }
-
+li > button.buttonPosition {
+    margin-top:auto;
+}
 button {
     color:white;
-    margin-bottom:20px;
     background-color:#cb652f;
     border:none;
     font-size:24px;
-    padding-left:30px;
-    padding-right:30px;
-    padding-top:15px;
-    padding-bottom:15px;
+    font-weight: bold;
+    padding: 15px 30px;
 }
 button:hover {
     background-color: #ff7235;
@@ -211,11 +227,18 @@ button > span{
     font-size:24px;
     /* How do I do that arrow styling thing I can't figure it out and I've googled :D */
 }
-.cardsItem > img{
-    max-height:275px;
-    max-width:100%;
-    font-weight: bold;
-    text-align: center;
+.cardsItem > ul > li > .cardImageContainer{
+    width:100%;
+    height:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.cardsItem > ul > li >.cardImageContainer > img{
+    flex-shrink: 0;
+    object-fit:cover;
+    max-height:  100%;
 }
 
 .error{
