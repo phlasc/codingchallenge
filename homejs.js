@@ -77,7 +77,7 @@ function renderHero(data) {
 function renderStats(data) {
     // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
     // language=HTML
-    return `\n<section id="stats">\n    <div class="statsItem">\n        <img src="${data.img}" width="250px" height="250px"\n             style="flex-grow:2;" class="imgfiller">\n    </div>\n    <div class="statsItem" style="flex-grow:1;"><h1>${data.content}</h1></div>\n</section>\n`;
+    return `\n<section id="stats">\n    <div class="statsItem">\n        <img src="${data.img}" class="imgfiller">\n    </div>\n    <div class="statsItem" style="flex-grow:1;"><h1>${data.content}</h1></div>\n</section>\n`;
 }
 
 function renderContentBlock(data) {
