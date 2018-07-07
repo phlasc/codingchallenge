@@ -1,0 +1,18 @@
+<div id="hero">
+
+    <div id="companyLogo">
+        <img src="${data.logo}">
+    </div>
+    <nav id="companyLinks">
+        <ul>
+            ${data.nav.map(nav => `
+            <li><a href="${nav.url}">${nav.content}</a></li>
+            `).join("\n")}
+        </ul>
+    </nav>
+    <div id="companySlogan">
+        <h1>${data.headline}</h1>
+        <h3>${data.subHeadLine}</h3>
+        <button>Let's Get Started <span>>></span></button>
+    </div>
+</div>

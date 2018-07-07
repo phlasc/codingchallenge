@@ -71,7 +71,24 @@ function renderPage(data, elementToRender) {
 function renderHero(data) {
     // this handles interpolation with the html to add to the HTML variable that is appeneded to the body tag.
     // language=HTML
-    return `\n <div id="hero">\n\n        <div id="companyLogo">\n            <img src="${data.logo}">\n        </div>\n        <nav id="companyLinks">\n            <ul>\n${data.nav.map(nav => `<li><a href="${nav.url}">${nav.content}</a></li>`).join("\n")}\n            </ul>\n        </nav>\n    <div id="companySlogan">\n        <h1>${data.headline}</h1>\n        <h3>${data.subHeadLine}</h3>\n        <button>Let's Get Started <span>>></span></button>\n    </div>\n`;
+    return `<div id="hero">
+
+        <div id="companyLogo">
+        <img src="${data.logo}">
+        </div>
+        <nav id="companyLinks">
+        <ul>
+        ${data.nav.map(nav => `
+        <li><a href="${nav.url}">${nav.content}</a></li>
+            `).join("\n")}
+        </ul>
+    </nav>
+    <div id="companySlogan">
+        <h1>${data.headline}</h1>
+        <h3>${data.subHeadLine}</h3>
+        <button>Let's Get Started <span>>></span></button>
+    </div>
+</div>`;
 }
 
 function renderStats(data) {
@@ -171,11 +188,12 @@ function handleSuccess(data) {
 
 }
 
+$(document).ready(function () {
 // handle errors and start on success
-getData(handleSuccess, function (error) {
-    displayError(error);
+    getData(handleSuccess, function (error) {
+        displayError(error);
 
-
+    });
 });
 
 // TODO
